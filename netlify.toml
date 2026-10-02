@@ -1,2 +1,10 @@
 [build]
   publish = "."
+  functions = "netlify/functions"
+
+# página de download e PDF: não aparecem no Google
+[[headers]]
+  for = "/acceso-lpyenwv0kv/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+    Cache-Control = "private, max-age=0"
