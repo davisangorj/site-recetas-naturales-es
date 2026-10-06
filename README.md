@@ -48,3 +48,10 @@ Deixe *Build command* vazio e *Publish directory* `.`. Cada commit no `main` atu
      uma compra real com cupom de 100% (ou no modo de teste do Stripe).
 
 **Trocar o PDF:** substitua o arquivo dentro de `acceso-lpyenwv0kv/` mantendo o mesmo nome.
+
+## Versão kit (bônus de 150 soluções)
+
+- `index.html`: página de vendas do kit (livro + bônus de 150 soluções). O bônus fica disponível por 45 minutos para cada visitante (contados no navegador dele). Quando o tempo acaba, a pessoa vai para `/livro/`.
+- `livro/index.html`: página só do livro de 50 receitas, com o mesmo preço e o mesmo link do Stripe.
+- A página de download (pasta `acesso-…`/`acceso-…`) entrega os 2 PDFs, com botões grandes e instruções para Android, iPhone e computador.
+- Os textos são gerados por `sites/_build/build.py dist` no repositório principal.

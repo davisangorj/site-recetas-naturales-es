@@ -19,17 +19,17 @@
 import { createHmac, timingSafeEqual } from "node:crypto";
 
 const CFG = {
-  "book": "50 Recetas Naturales que Sí Funcionan",
+  "book": "Kit 50 Recetas Naturales + 150 Soluciones Naturales",
   "currency": "usd",
   "accessPath": "/acceso-lpyenwv0kv/",
   "email": {
-    "subject": "Tu ebook llegó: 50 Recetas Naturales que Sí Funcionan",
+    "subject": "Tus 2 libros llegaron: 50 Recetas Naturales + 150 Soluciones Naturales",
     "hello": "Hola",
-    "body": "¡Gracias por tu compra! Tu libro ya está disponible. Toca el botón de abajo para abrir la página de descarga y bajar el PDF.",
-    "button": "Descargar mi ebook",
+    "body": "¡Gracias por tu compra! Tus 2 libros ya están disponibles: 50 Recetas Naturales que Sí Funcionan y el bono 150 Soluciones Naturales que Realmente Funcionan. Toca el botón de abajo para abrir la página de descarga.",
+    "button": "Descargar mis 2 libros",
     "fallback": "Si el botón no funciona, copia y pega este enlace en tu navegador:",
-    "footer": "Guarda este correo: el enlace funciona siempre que quieras descargarlo de nuevo. Si tienes dudas, solo responde este mensaje.",
-    "legal": "Recibiste este correo porque compraste el ebook. Contenido educativo; no sustituye el consejo médico."
+    "footer": "Guarda este correo: el enlace funciona siempre que quieras descargarlos de nuevo. Si tienes dudas, solo responde este mensaje.",
+    "legal": "Recibiste este correo porque compraste los libros. Contenido educativo; no sustituye el consejo médico."
   }
 };
 
