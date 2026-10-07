@@ -80,6 +80,7 @@
     a.addEventListener("click", function () {
       if (a.getAttribute("href").charAt(0) === "#") return;
       if (window.fbq) window.fbq("track", "InitiateCheckout");
+      if (window.clarity) window.clarity("event", "clique_comprar");
       if (window.dataLayer) window.dataLayer.push({ event: "begin_checkout", cta: a.dataset.cta });
     });
   });
