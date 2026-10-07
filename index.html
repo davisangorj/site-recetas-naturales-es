@@ -18,21 +18,21 @@
 <link rel="stylesheet" href="assets/v2.css">
 <link rel="stylesheet" href="assets/v3.css">
 </head>
-<body class="v2 v3" data-bonus-minutes="45" data-expired-url="/livro/">
+<body class="v2 v3" data-bonus-minutes="45" data-expired-url="/livro/" data-mode="main" data-ext-hours="24">
 
 <!-- BARRA DE URGÊNCIA -->
 <div class="urgency">
-  <span class="bonus-only">⏰ ATENCIÓN: tu BONO de 150 Soluciones Naturales sale de la oferta en <span class="timer timer-sm" data-timer><b data-m>45</b>:<b data-s>00</b></span></span>
-  <span class="expired-only">El bono de 150 remedios expiró. El libro de 50 recetas sigue disponible.</span>
+  <span class="bonus-only">⏰ ATENCIÓN: tu BONO de 150 Soluciones Naturales sale de la oferta en <span class="timer timer-sm" data-timer><span class="h-part"><b data-h>00</b>:</span><b data-m>45</b>:<b data-s>00</b></span></span>
+  <span class="expired-only">El bono de 150 soluciones expiró. El libro de 50 recetas sigue con 63% OFF.</span>
 </div>
 
 <header class="nav" id="top">
   <div class="wrap nav-in">
     <a class="brand" href="#top" aria-label="Kit 50 Recetas Naturales + 150 Soluciones Naturales">
       <svg class="sprig" viewBox="0 0 24 40" aria-hidden="true"><path d="M12 39V2M12 9c-4-1-7-4-7-7 4 0 7 3 7 7zm0 8c4-1 7-4 7-7-4 0-7 3-7 7zm0 8c-4-1-7-4-7-7 4 0 7 3 7 7zm0 8c4-1 7-4 7-7-4 0-7 3-7 7z"/></svg>
-      <span><b>200</b> Recetas y Remedios</span>
+      <span><b>Recetas</b> y Remedios Naturales</span>
     </a>
-    <a class="btn btn-sm btn-hot" href="#oferta" data-cta="nav">Quiero el kit</a>
+    <a class="btn btn-sm btn-hot" href="#oferta" data-cta="nav"><span class="bonus-only">Quiero el kit</span><span class="expired-only">Quiero el libro</span></a>
   </div>
 </header>
 
@@ -42,9 +42,11 @@
 <section class="hero hero2 hero3">
   <div class="wrap hero-in">
     <div class="hero-copy">
-      <p class="pill-alert">🎁 Especial para quien llegó por el video</p>
-      <h1>200 recetas y remedios naturales para el <mark>vientre inflamado, los dolores, el sueño y la glucosa</mark> — por menos de 5 centavos cada uno.</h1>
-      <p class="lede">Los remedios caseros que usaba tu abuela, ahora con medidas exactas y con lo que la ciencia dice de cada uno. Todo con ingredientes que ya tienes en casa o encuentras en el súper.</p>
+      <p class="pill-alert bonus-only">🎁 Especial para quien llegó por el video</p>
+      <p class="pill-alert expired-only">🔥 Oferta especial: libro completo por US$ 9.90</p>
+      <h1><span class="bonus-only">200 recetas y remedios naturales para el <mark>vientre inflamado, los dolores, el sueño y la glucosa</mark> — por menos de 5 centavos cada uno.</span><span class="expired-only">50 recetas naturales para la <mark>glucosa, el antojo de dulce, el intestino y el sueño</mark> — por menos de 20 centavos cada una.</span></h1>
+      <p class="lede bonus-only">Los remedios caseros que usaba tu abuela, ahora con medidas exactas y con lo que la ciencia dice de cada uno. Todo con ingredientes que ya tienes en casa o encuentras en el súper.</p>
+      <p class="lede expired-only">Postres sin azúcar refinada, panes sin trigo y bebidas con medidas exactas y con lo que la ciencia dice de cada receta. Todo con ingredientes del súper.</p>
       <div class="hero-box">
         <div class="hb-price">
           <span class="price-old">US$ 27</span>
@@ -52,11 +54,11 @@
           <span class="badge">−63%</span>
         </div>
         <p class="hb-bonus bonus-only"><b>+ BONO GRATIS:</b> libro <b>150 Soluciones Naturales</b>. Solo va incluido si lo aseguras en los próximos minutos.</p>
-        <p class="hb-bonus expired-only">Tu bono de 150 remedios expiró, pero todavía puedes llevarte el libro de 50 recetas.</p>
-        <a class="btn btn-lg btn-hot btn-block" href="https://buy.stripe.com/fZu3cv6bE0Ze9rCaXNa3u03" data-cta="hero">¡Sí! Quiero los 2 libros ahora</a>
+        <p class="hb-bonus expired-only">Tu bono de 150 soluciones expiró, pero todavía puedes llevarte el libro de 50 recetas con 63% de descuento.</p>
+        <a class="btn btn-lg btn-hot btn-block" href="https://buy.stripe.com/fZu3cv6bE0Ze9rCaXNa3u03" data-cta="hero"><span class="bonus-only">¡Sí! Quiero los 2 libros ahora</span><span class="expired-only">¡Sí! Quiero mis 50 recetas</span></a>
         <div class="hb-timer bonus-only">
           <span>⏳ Tu bono expira en:</span>
-          <span class="timer" data-timer><span><b data-m>45</b><small>min</small></span><span><b data-s>00</b><small>seg</small></span></span>
+          <span class="timer" data-timer><span class="h-part"><b data-h>00</b><small>h</small></span><span><b data-m>45</b><small>min</small></span><span><b data-s>00</b><small>seg</small></span></span>
         </div>
         <ul class="trust"><li>Acceso inmediato por correo</li><li>Pago único, sin suscripción</li><li>Garantía de 7 días</li></ul>
       </div>
@@ -70,7 +72,7 @@
 </section>
 
 <!-- NÚMEROS -->
-<section class="stats">
+<section class="stats bonus-only">
   <div class="wrap stats-in"><div class="stat"><b>200</b><span>recetas y remedios</span></div><div class="stat"><b>2</b><span>libros completos</span></div><div class="stat"><b>17</b><span>capítulos por problema</span></div><div class="stat"><b>7</b><span>días de garantía</span></div></div>
 </section>
 
@@ -90,7 +92,7 @@
     <p class="label">No es tu culpa</p>
     <h2 class="h-xl">Internet está lleno de recetas bonitas que <mark>nunca se probaron</mark>.</h2>
     <p class="serif-lede">Alguien promete un cheesecake con un huevo y un yogur. Lo haces en casa y te sale un omelette dulce. Alguien jura que un té “lo cura todo”. Lo tomas por semanas y nada cambia. Tiempo perdido, dinero perdido, esperanza perdida.</p>
-    <p class="serif-lede">Este kit es lo contrario. Son 200 recetas y remedios naturales con medidas exactas, y para cada uno buscamos lo que dicen los estudios de verdad. Lo que funciona está ahí. Lo que es puro mito, te lo avisamos.</p>
+    <p class="serif-lede">Este kit es lo contrario: recetas y remedios naturales con medidas exactas, y para cada uno buscamos lo que dicen los estudios de verdad. Lo que funciona está ahí. Lo que es puro mito, te lo avisamos.</p>
     <blockquote>Los remedios de la abuela, por fin explicados por la ciencia. La comida cuida. El médico trata. Usa los dos.</blockquote>
     <a class="btn btn-lg btn-hot" href="#oferta" data-cta="story">Quiero el kit con el bono</a>
   </div>
@@ -119,7 +121,7 @@
         <p class="sub">El libro de los remedios caseros que usaba tu abuela: tés, compresas, masajes y alimentos para las molestias de todos los días. Cada uno con el paso a paso, el sello de evidencia y la alerta de quién no debe usarlo.</p>
         <div class="bonus-timer">
           <span>Este bono sale de la oferta en</span>
-          <span class="timer timer-lg" data-timer><span><b data-m>45</b><small>min</small></span><span><b data-s>00</b><small>seg</small></span></span>
+          <span class="timer timer-lg" data-timer><span class="h-part"><b data-h>00</b><small>h</small></span><span><b data-m>45</b><small>min</small></span><span><b data-s>00</b><small>seg</small></span></span>
         </div>
       </div>
     </div>
@@ -154,14 +156,14 @@
     <article class="tier best stack">
       <span class="tier-flag bonus-only">Bono liberado solo ahora</span>
       <div class="covers big"><img src="img/pages/cover.jpg" alt="" loading="lazy"><span class="plus bonus-only">+</span><img class="bonus-only" src="img/pages/cover150.jpg" alt="" loading="lazy"></div>
-      <ul class="stack-list"><li class=""><span>Libro 50 Recetas Naturales que Sí Funcionan</span><em>US$ 27</em></li><li class=""><span>8 capítulos, menú de la semana y lista del súper</span><em>incluido</em></li><li class="gift"><span>Bono: libro 150 Soluciones Naturales</span><em>GRATIS hoy</em></li><li class=""><span>Sello de evidencia + alerta de seguridad en todo</span><em>incluido</em></li><li class=""><span>Acceso inmediato en el celular, para siempre</span><em>incluido</em></li></ul>
+      <ul class="stack-list"><li class=""><span>Libro 50 Recetas Naturales que Sí Funcionan</span><em>US$ 27</em></li><li class=""><span>8 capítulos, menú de la semana y lista del súper</span><em>incluido</em></li><li class="gift bonus-only"><span>Bono: libro 150 Soluciones Naturales</span><em>GRATIS hoy</em></li><li class=""><span>Sello de evidencia + alerta de seguridad en todo</span><em>incluido</em></li><li class=""><span>Acceso inmediato en el celular, para siempre</span><em>incluido</em></li></ul>
       <div class="stack-total bonus-only"><span></span><s></s></div>
       <div class="t-price"><span class="price-old">US$ 27</span><span class="price">US$ 9.90</span><span class="badge">−63%</span></div>
       <p class="t-note">Pago único. Sin mensualidades. Menos de 5 centavos por receta.</p>
-      <a class="btn btn-lg btn-hot" href="https://buy.stripe.com/fZu3cv6bE0Ze9rCaXNa3u03" data-cta="offer">¡Sí! Quiero los 2 libros ahora</a>
+      <a class="btn btn-lg btn-hot" href="https://buy.stripe.com/fZu3cv6bE0Ze9rCaXNa3u03" data-cta="offer"><span class="bonus-only">¡Sí! Quiero los 2 libros ahora</span><span class="expired-only">¡Sí! Quiero mis 50 recetas</span></a>
       <div class="of-timer bonus-only">
         <span>⏳ Tu bono expira en:</span>
-        <span class="timer timer-lg" data-timer><span><b data-m>45</b><small>min</small></span><span><b data-s>00</b><small>seg</small></span></span>
+        <span class="timer timer-lg" data-timer><span class="h-part"><b data-h>00</b><small>h</small></span><span><b data-m>45</b><small>min</small></span><span><b data-s>00</b><small>seg</small></span></span>
       </div>
       <p class="secure center">🔒 Pago 100% seguro con Stripe · Acceso inmediato por correo</p>
     </article>
@@ -196,9 +198,10 @@
     <p class="label">Última llamada</p>
     <h2 class="h-xl bonus-only">Cuando el reloj llegue a cero, el bono de 150 remedios se va.</h2>
     <h2 class="h-xl expired-only">El libro de 50 recetas todavía está disponible.</h2>
-    <p class="sub">Hoy: 200 recetas y remedios naturales por US$ 9.90, con 7 días de garantía. Menos que una comida rápida — y es tuyo para siempre.</p>
-    <span class="timer timer-lg timer-light bonus-only" data-timer><span><b data-m>45</b><small>min</small></span><span><b data-s>00</b><small>seg</small></span></span>
-    <a class="btn btn-lg btn-hot" href="https://buy.stripe.com/fZu3cv6bE0Ze9rCaXNa3u03" data-cta="final">¡Sí! Quiero los 2 libros ahora</a>
+    <p class="sub bonus-only">Hoy: 200 recetas y remedios naturales por US$ 9.90, con 7 días de garantía. Menos que una comida rápida — y es tuyo para siempre.</p>
+    <p class="sub expired-only">50 recetas naturales por US$ 9.90, con 7 días de garantía. Menos que una comida rápida — y es tuyo para siempre.</p>
+    <span class="timer timer-lg timer-light bonus-only" data-timer><span class="h-part"><b data-h>00</b><small>h</small></span><span><b data-m>45</b><small>min</small></span><span><b data-s>00</b><small>seg</small></span></span>
+    <a class="btn btn-lg btn-hot" href="https://buy.stripe.com/fZu3cv6bE0Ze9rCaXNa3u03" data-cta="final"><span class="bonus-only">¡Sí! Quiero los 2 libros ahora</span><span class="expired-only">¡Sí! Quiero mis 50 recetas</span></a>
     <ul class="trust trust-light"><li>Acceso inmediato por correo</li><li>Pago único, sin suscripción</li><li>Garantía de 7 días</li></ul>
   </div>
 </section>
@@ -216,7 +219,7 @@
 <div class="sticky2" id="sticky-cta">
   <div class="s2-left">
     <span class="s2-price"><span class="price-old">US$ 27</span> <b>US$ 9.90</b></span>
-    <span class="s2-bonus bonus-only">El bono expira en <span class="timer timer-xs" data-timer><b data-m>45</b>:<b data-s>00</b></span></span>
+    <span class="s2-bonus bonus-only">El bono expira en <span class="timer timer-xs" data-timer><span class="h-part"><b data-h>00</b>:</span><b data-m>45</b>:<b data-s>00</b></span></span>
   </div>
   <a class="btn btn-sm btn-hot" href="https://buy.stripe.com/fZu3cv6bE0Ze9rCaXNa3u03" data-cta="sticky">Lo quiero</a>
 </div>
@@ -230,7 +233,7 @@
     <div class="covers big"><img src="img/pages/cover.jpg" alt=""><span class="plus bonus-only">+</span><img class="bonus-only" src="img/pages/cover150.jpg" alt=""></div>
     <p class="pop-text">Asegura ahora los 2 libros por un solo precio. Pago único y acceso inmediato.</p>
     <div class="pop-price"><span class="price-old">US$ 27</span> <span class="price">US$ 9.90</span></div>
-    <span class="timer timer-lg bonus-only" data-timer><span><b data-m>45</b><small>min</small></span><span><b data-s>00</b><small>seg</small></span></span>
+    <span class="timer timer-lg bonus-only" data-timer><span class="h-part"><b data-h>00</b><small>h</small></span><span><b data-m>45</b><small>min</small></span><span><b data-s>00</b><small>seg</small></span></span>
     <a class="btn btn-lg btn-hot btn-block" href="https://buy.stripe.com/fZu3cv6bE0Ze9rCaXNa3u03" data-cta="popup">Sí, quiero asegurarlo ahora</a>
     <button class="pop-no" type="button">No, gracias. Prefiero perder el bono.</button>
   </div>

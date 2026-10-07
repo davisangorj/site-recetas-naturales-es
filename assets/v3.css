@@ -95,3 +95,7 @@
 .hero3 .hero-visual.duo { margin-top: 40px; }
 .cat .cat-hook { margin-bottom: 0; }
 .covers.big img, .tier .covers img { aspect-ratio: auto; height: auto; }
+.mode-main .h-part { display: none !important; }
+.mode-ext .timer-sm > .h-part, .mode-ext .timer-xs > .h-part { display: inline !important; min-width: 0; padding: 0; background: none; border: 0; }
+.bonus-expired a .expired-only, .bonus-expired button .expired-only { display: inline !important; }
+.timer-sm > .h-part b, .timer-xs > .h-part b { font: inherit; }
