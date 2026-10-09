@@ -35,7 +35,9 @@
   tick();
 
   // VSL: começa sem som (regra do celular/Instagram); ao tocar no botão, recomeça do início com som.
-  var vsl = document.getElementById("vsl"), watching = false;
+  var vsl = document.getElementById("vsl"), inView = true;
+  // "assistindo" = vídeo tocando (com ou sem som — tem legenda) e aparecendo na tela
+  function watching() { return !!vsl && inView && !vsl.paused && !vsl.ended; }
   if (vsl) {
     var box = vsl.parentNode;
     function sound() {
@@ -45,20 +47,22 @@
     }
     box.querySelector(".vsl-sound").addEventListener("click", sound);
     vsl.addEventListener("click", function () { if (!box.classList.contains("on")) sound(); });
-    vsl.addEventListener("play", function () { watching = !vsl.muted; });
-    vsl.addEventListener("pause", function () { watching = false; });
-    vsl.addEventListener("ended", function () { watching = false; try { if (window.clarity) clarity("event", "vsl_fim"); } catch (e) {} });
+    // vídeo visível na tela? (com IntersectionObserver; sem ele, considera visível)
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (es) { inView = es[0].isIntersecting; }, { threshold: 0.4 }).observe(vsl);
+    }
+    vsl.addEventListener("ended", function () { try { if (window.clarity) clarity("event", "vsl_fim"); } catch (e) {} });
   }
 
   // Pop-up: aparece uma vez por visita — ao tentar sair (computador), depois de 35 s ou ao rolar 60% da página.
   var pop = document.getElementById("popup");
   if (!pop) return;
-  var shown = false;
+  var shown = false, waiting = false;
   try { shown = sessionStorage.getItem("popup_v3") === "1"; } catch (e) {}
   function open() {
     if (shown) return;
     // não interrompe quem está assistindo ao vídeo com som: tenta de novo depois
-    if (watching) { setTimeout(open, 5000); return; }
+    if (watching()) { if (!waiting) { waiting = true; setTimeout(function () { waiting = false; open(); }, 3000); } return; }
     shown = true;
     try { sessionStorage.setItem("popup_v3", "1"); } catch (e) {}
     pop.hidden = false; document.body.classList.add("popup-open");
