@@ -46,8 +46,10 @@
       <p class="pill-alert bonus-only">🎉 Tu bono fue extendido — última oportunidad</p>
       <p class="pill-alert expired-only">🔥 Oferta especial: libro completo por US$ 9.90</p>
       <h1><span class="bonus-only">200 recetas y remedios naturales para el <mark>vientre inflamado, los dolores, el sueño y la glucosa</mark> — por menos de 5 centavos cada uno.</span><span class="expired-only">50 recetas naturales para la <mark>glucosa, el antojo de dulce, el intestino y el sueño</mark> — por menos de 20 centavos cada una.</span></h1>
-      <p class="lede bonus-only">Los remedios caseros que usaba tu abuela, ahora con medidas exactas y con lo que la ciencia dice de cada uno. Todo con ingredientes que ya tienes en casa o encuentras en el súper.</p>
-      <p class="lede expired-only">Postres sin azúcar refinada, panes sin trigo y bebidas con medidas exactas y con lo que la ciencia dice de cada receta. Todo con ingredientes del súper.</p>
+      <div class="vsl">
+        <video id="vsl" src="../img/vsl.mp4" poster="../img/vsl-poster.jpg" width="720" height="900" playsinline muted autoplay loop preload="metadata" aria-label="Video: Elena explica el kit"></video>
+        <button class="vsl-sound" type="button">🔊 Toca para escuchar</button>
+      </div>
       <div class="hero-box">
         <div class="hb-price">
           <span class="price-old">US$ 27</span>
@@ -61,13 +63,16 @@
           <span>⏳ Tu última oportunidad termina en:</span>
           <span class="timer" data-timer><span class="h-part"><b data-h>00</b><small>h</small></span><span><b data-m>45</b><small>min</small></span><span><b data-s>00</b><small>seg</small></span></span>
         </div>
-        <ul class="trust"><li>Acceso inmediato por correo</li><li>Pago único, sin suscripción</li><li>Garantía de 7 días</li></ul>
+        <p class="hb-guar"><span class="g-mini" aria-hidden="true">7<small>días</small></span><span><b>Garantía de 7 días:</b> si no te gusta, te devolvemos el 100% de tu dinero. Sin preguntas.</span></p>
+        <ul class="trust trust-hero"><li>🔒 Pago seguro</li><li>📩 Acceso inmediato por correo</li><li>📱 Léelo en el celular</li></ul>
       </div>
+      <p class="lede bonus-only">Los remedios caseros que usaba tu abuela, ahora con medidas exactas y con lo que la ciencia dice de cada uno. Todo con ingredientes que ya tienes en casa o encuentras en el súper.</p>
+      <p class="lede expired-only">Postres sin azúcar refinada, panes sin trigo y bebidas con medidas exactas y con lo que la ciencia dice de cada receta. Todo con ingredientes del súper.</p>
     </div>
-    <div class="hero-visual duo" aria-hidden="true">
-      <div class="book b-main"><img src="../img/pages/cover.jpg" alt="" width="760" height="1075" fetchpriority="high"></div>
-      <div class="book b-bonus bonus-only"><img src="../img/pages/cover150.jpg" alt="" width="760" height="1075"></div>
-      <div class="sticker bonus-only"><b>+150</b><span>remedios de bono</span></div>
+    <div class="hero-visual autora">
+      <img class="bonus-only" src="../img/autora.jpg" alt="Elena sosteniendo los dos libros" width="800" height="800" loading="lazy">
+      <div class="book b-main expired-only" aria-hidden="true"><img src="../img/pages/cover.jpg" alt="" width="760" height="1075" loading="lazy"></div>
+      <div class="sticker bonus-only" aria-hidden="true"><b>+150</b><span>remedios de bono</span></div>
     </div>
   </div>
 </section>

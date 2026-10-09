@@ -34,13 +34,32 @@
   }
   tick();
 
+  // VSL: começa sem som (regra do celular/Instagram); ao tocar no botão, recomeça do início com som.
+  var vsl = document.getElementById("vsl"), watching = false;
+  if (vsl) {
+    var box = vsl.parentNode;
+    function sound() {
+      box.classList.add("on"); vsl.muted = false; vsl.loop = false; vsl.currentTime = 0; vsl.controls = true;
+      var p = vsl.play(); if (p && p.catch) p.catch(function () {});
+      try { if (window.clarity) clarity("event", "vsl_som"); } catch (e) {}
+    }
+    box.querySelector(".vsl-sound").addEventListener("click", sound);
+    vsl.addEventListener("click", function () { if (!box.classList.contains("on")) sound(); });
+    vsl.addEventListener("play", function () { watching = !vsl.muted; });
+    vsl.addEventListener("pause", function () { watching = false; });
+    vsl.addEventListener("ended", function () { watching = false; try { if (window.clarity) clarity("event", "vsl_fim"); } catch (e) {} });
+  }
+
   // Pop-up: aparece uma vez por visita — ao tentar sair (computador), depois de 35 s ou ao rolar 60% da página.
   var pop = document.getElementById("popup");
   if (!pop) return;
   var shown = false;
   try { shown = sessionStorage.getItem("popup_v3") === "1"; } catch (e) {}
   function open() {
-    if (shown) return; shown = true;
+    if (shown) return;
+    // não interrompe quem está assistindo ao vídeo com som: tenta de novo depois
+    if (watching) { setTimeout(open, 5000); return; }
+    shown = true;
     try { sessionStorage.setItem("popup_v3", "1"); } catch (e) {}
     pop.hidden = false; document.body.classList.add("popup-open");
     var b = pop.querySelector(".btn"); if (b) b.focus();
