@@ -12,7 +12,7 @@
 //   EMAIL_FROM_NAME        nome do remetente (opcional)
 //   EMAIL_REPLY_TO         e-mail para respostas/suporte (opcional)
 //   SITE_URL               (opcional) domínio do site, ex.: https://meusite.com
-//   PAYMENT_LINK_ID        (opcional) plink_... para aceitar só esse link de pagamento
+//   PAYMENT_LINK_ID        (opcional) plink_... para aceitar só esse link (senão: paymentLinks do copy)
 //
 // Gerado por sites/_build/build.py — as constantes abaixo vêm de copy/<idioma>.json.
 
@@ -30,7 +30,10 @@ const CFG = {
     "fallback": "Si el botón no funciona, copia y pega este enlace en tu navegador:",
     "footer": "Guarda este correo: el enlace funciona siempre que quieras descargarlos de nuevo. Si tienes dudas, solo responde este mensaje.",
     "legal": "Recibiste este correo porque compraste los libros. Contenido educativo; no sustituye el consejo médico."
-  }
+  },
+  "paymentLinks": [
+    "plink_1UM26SHqUD5XCcEnMOgIeDiE"
+  ]
 };
 
 const env = (k) => (typeof Netlify !== "undefined" ? Netlify.env.get(k) : process.env[k]) || "";
@@ -115,8 +118,9 @@ export default async (req) => {
   }
   const s = event.data.object;
   // A mesma conta Stripe vende os dois livros: cada site só responde pela sua venda.
-  const plink = env("PAYMENT_LINK_ID");
-  if (plink ? s.payment_link !== plink : (s.currency || "").toLowerCase() !== CFG.currency) {
+  // Filtro pelo link de pagamento (não pela moeda: o mesmo link cobra em várias moedas locais).
+  const links = env("PAYMENT_LINK_ID") ? [env("PAYMENT_LINK_ID")] : CFG.paymentLinks || [];
+  if (links.length ? !links.includes(s.payment_link) : (s.currency || "").toLowerCase() !== CFG.currency) {
     return new Response("ignorado: outro produto", { status: 200 });
   }
   if (s.payment_status !== "paid") return new Response("ignorado: não pago", { status: 200 });
