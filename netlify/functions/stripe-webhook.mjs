@@ -32,6 +32,7 @@ const CFG = {
     "legal": "Recibiste este correo porque compraste los libros. Contenido educativo; no sustituye el consejo médico."
   },
   "paymentLinks": [
+    "plink_1UOxNNHqUD5XCcEn1qdfcFLQ",
     "plink_1UM26SHqUD5XCcEnMOgIeDiE"
   ]
 };
