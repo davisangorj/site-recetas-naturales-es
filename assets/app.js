@@ -80,7 +80,10 @@
     a.addEventListener("click", function () {
       if (a.getAttribute("href").charAt(0) === "#") return;
       if (window.fbq) window.fbq("track", "InitiateCheckout");
-      if (window.clarity) window.clarity("event", "clique_comprar");
+      if (window.clarity) {
+        window.clarity("event", "clique_comprar");
+        window.clarity("event", a.href.indexOf("hotmart") > -1 ? "clique_hotmart" : "clique_stripe");
+      }
       if (window.dataLayer) window.dataLayer.push({ event: "begin_checkout", cta: a.dataset.cta });
     });
   });
