@@ -10,8 +10,9 @@
                             : Number(document.body.dataset.bonusMinutes || 45) * 60000;
   var store = { get: function () { try { return localStorage.getItem(KEY); } catch (e) { return null; } },
                 set: function (v) { try { localStorage.setItem(KEY, v); } catch (e) {} } };
-  var end = Number(store.get());
-  if (!end) { end = Date.now() + span; store.set(String(end)); }
+  // solo: página só do livro (sem bônus nem cronômetro)
+  var end = mode === "solo" ? 0 : Number(store.get());
+  if (!end && mode !== "solo") { end = Date.now() + span; store.set(String(end)); }
 
   var timers = Array.prototype.slice.call(document.querySelectorAll("[data-timer]"));
   var pad = function (n) { return (n < 10 ? "0" : "") + n; };
@@ -32,7 +33,7 @@
     }
     setTimeout(tick, 1000 - (Date.now() % 1000));
   }
-  tick();
+  if (mode !== "solo") tick();
 
   // VSL: começa sem som (regra do celular/Instagram); ao tocar no botão, recomeça do início com som.
   var vsl = document.getElementById("vsl"), inView = true;

@@ -127,3 +127,7 @@
 }
 .hero-visual.autora .sticker { top: -12px; right: -4px; bottom: auto; }
 @media (max-width: 860px) { .hero-visual.autora .sticker { top: -10px; right: -2px; width: 96px; height: 96px; } }
+
+/* solo: página só do livro (sem bônus) — a foto da autora fica no lugar da capa */
+.mode-solo .hero-visual.autora > img.bonus-only { display: block !important; }
+.mode-solo .hero-visual.autora .b-main { display: none !important; }
