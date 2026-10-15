@@ -119,10 +119,11 @@ export default async (req) => {
     return new Response("ignorado: evento", { status: 200 });
   }
   const s = event.data.object;
-  // A mesma conta Stripe vende os dois livros: cada site só responde pela sua venda.
+  // A mesma conta Stripe vende os livros de todos os sites: cada site só responde pela sua venda.
   // Filtro pelo link de pagamento (não pela moeda: o mesmo link cobra em várias moedas locais).
   const links = env("PAYMENT_LINK_ID") ? [env("PAYMENT_LINK_ID")] : CFG.paymentLinks || [];
-  if (links.length ? !links.includes(s.payment_link) : (s.currency || "").toLowerCase() !== CFG.currency) {
+  // Sem link configurado, não responde por nada (vários sites cobram em euro na mesma conta).
+  if (!links.includes(s.payment_link)) {
     return new Response("ignorado: outro produto", { status: 200 });
   }
   if (s.payment_status !== "paid") return new Response("ignorado: não pago", { status: 200 });

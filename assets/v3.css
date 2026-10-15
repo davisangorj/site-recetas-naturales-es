@@ -131,3 +131,6 @@
 /* solo: página só do livro (sem bônus) — a foto da autora fica no lugar da capa */
 .mode-solo .hero-visual.autora > img.bonus-only { display: block !important; }
 .mode-solo .hero-visual.autora .b-main { display: none !important; }
+/* sem VSL: foto da autora logo abaixo do título */
+.vsl-photo { margin: 18px 0 20px; }
+.vsl-photo img { width: 100%; max-width: 520px; border-radius: 12px; box-shadow: 0 20px 44px -22px rgba(0,0,0,.5); }
